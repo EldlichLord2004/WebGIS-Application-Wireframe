@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "id": "admin",
+      "fullName": "Quản trị viên",
+      "email": "admin@local",
+      "password": "admin",
+      "role": "admin",
+      "createdAt": "2025-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "U_1766544278189",
+      "fullName": "aaa",
+      "email": "user@local",
+      "password": "user",
+      "role": "member",
+      "createdAt": "2025-12-24T02:44:38.189Z"
+    }
+  ]
+}

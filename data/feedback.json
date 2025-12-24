@@ -1,0 +1,76 @@
+{
+  "feedbacks": [
+    {
+      "id": "FB_1766543425633",
+      "userId": "1",
+      "title": "aasdasdadad",
+      "content": "áhdsaugdadna;sd",
+      "status": "pending",
+      "createdAt": "2025-12-24T02:30:25.633Z"
+    },
+    {
+      "id": "FB_1766543513007",
+      "userId": "1",
+      "title": "uwu",
+      "content": "hehehhehehee",
+      "status": "pending",
+      "createdAt": "2025-12-24T02:31:53.008Z"
+    },
+    {
+      "id": "FB_1766543971373",
+      "userId": "admin",
+      "title": "sadadadad",
+      "content": "adasdadadad",
+      "status": "pending",
+      "createdAt": "2025-12-24T02:39:31.373Z"
+    },
+    {
+      "id": "FB_1766544296042",
+      "userId": "U_1766544278189",
+      "title": "adsdadad",
+      "content": "adsdadad",
+      "status": "pending",
+      "createdAt": "2025-12-24T02:44:56.042Z"
+    },
+    {
+      "id": "FB_1766547393976",
+      "userId": "U_1766544278189",
+      "title": "asasasdasd",
+      "content": "adsadsadadadadadd",
+      "status": "pending",
+      "createdAt": "2025-12-24T03:36:33.976Z"
+    },
+    {
+      "id": "FB_1766547592048",
+      "userId": "U_1766544278189",
+      "title": "gop y 1",
+      "content": "ssdsdadadadadad",
+      "status": "pending",
+      "createdAt": "2025-12-24T03:39:52.048Z"
+    },
+    {
+      "id": "FB_1766547690022",
+      "userId": "admin",
+      "title": "gop y admin",
+      "content": "adadadadadad",
+      "status": "pending",
+      "createdAt": "2025-12-24T03:41:30.022Z"
+    },
+    {
+      "id": "FB_1766548367087",
+      "userId": "admin",
+      "title": "aaaaa",
+      "content": "aaaaaa",
+      "status": "pending",
+      "createdAt": "2025-12-24T03:52:47.087Z"
+    },
+    {
+      "id": "FB_1766549883525",
+      "userId": "U_1766544278189",
+      "title": "hehhe",
+      "content": "hehehhee",
+      "status": "responded",
+      "createdAt": "2025-12-24T04:18:03.525Z"
+    }
+  ]
+}
