@@ -8,6 +8,11 @@ import { Toaster } from "./components/ui/sonner";
 export default function App() {
   const [sidebarVisible, setSidebarVisible] = useState(true);
   const [analysisMode, setAnalysisMode] = useState(false);
+  const [selectedYear, setSelectedYear] = useState<2015 | 2025>(2025);
+
+  const toggleYear = () => {
+    setSelectedYear(prev => prev === 2015 ? 2025 : 2015);
+  };
 
   return (
     <AuthProvider>
@@ -21,9 +26,11 @@ export default function App() {
             <Sidebar 
               analysisMode={analysisMode}
               onToggleAnalysis={() => setAnalysisMode(!analysisMode)}
+              selectedYear={selectedYear}
+              onToggleYear={toggleYear}
             />
           )}
-          <MapArea analysisMode={analysisMode} />
+          <MapArea analysisMode={analysisMode} selectedYear={selectedYear} />
         </div>
       </div>
       <Toaster />

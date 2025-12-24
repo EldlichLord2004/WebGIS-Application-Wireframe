@@ -25,6 +25,7 @@ L.Icon.Default.mergeOptions({
 
 interface MapAreaProps {
   analysisMode: boolean;
+  selectedYear: 2015 | 2025;
 }
 
 interface LocationInfo {
@@ -80,8 +81,7 @@ function ZoomControl() {
   );
 }
 
-export function MapArea({ analysisMode }: MapAreaProps) {
-  const [selectedYear, setSelectedYear] = useState<2015 | 2025>(2025);
+export function MapArea({ analysisMode, selectedYear }: MapAreaProps) {
   const [selectedLocation, setSelectedLocation] = useState<LocationInfo | null>(null);
   
   // Tọa độ trung tâm TP.HCM
@@ -103,11 +103,6 @@ export function MapArea({ analysisMode }: MapAreaProps) {
   };
 
   const currentLayer = tileLayers[selectedYear];
-
-  // Hàm toggle giữa 2 năm
-  const toggleYear = () => {
-    setSelectedYear(prev => prev === 2015 ? 2025 : 2015);
-  };
 
   // Hàm lấy thông tin địa điểm từ tọa độ
   const getLocationInfo = async (lat: number, lng: number) => {
@@ -353,48 +348,6 @@ export function MapArea({ analysisMode }: MapAreaProps) {
               )}
             </CardContent>
           </Card>
-        </div>
-      )}
-
-      {/* Year Toggle Button - NÚT CHUYỂN ĐỔI NĂM MỚI */}
-      {!analysisMode && (
-        <div className="absolute bottom-6 right-6 space-y-3 z-[1000]">
-          {/* Toggle Button với animation */}
-          <Card className="shadow-lg">
-            <CardContent className="p-4">
-              <div className="space-y-3">
-                {/* Display current year */}
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-600 flex items-center gap-2">
-                    <Calendar className="h-4 w-4" />
-                    Năm hiện tại:
-                  </span>
-                  <span className="text-lg font-bold text-blue-600">{selectedYear}</span>
-                </div>
-
-                {/* Toggle Button */}
-                <Button 
-                  onClick={toggleYear}
-                  className="w-full group"
-                  size="lg"
-                >
-                  <ArrowLeftRight className="mr-2 h-5 w-5 group-hover:rotate-180 transition-transform duration-300" />
-                  Chuyển sang {selectedYear === 2015 ? "2025" : "2015"}
-                </Button>
-
-                {/* Map type indicator */}
-                <div className="text-xs text-center text-gray-500">
-                  {selectedYear === 2015 ? "📡 Ảnh vệ tinh" : "🗺️ Bản đồ đường phố"}
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Swipe Map Button */}
-          <Button className="w-full bg-white" variant="outline">
-            <SplitSquareHorizontal className="mr-2 h-4 w-4" />
-            Swipe Map
-          </Button>
         </div>
       )}
 

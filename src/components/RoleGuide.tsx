@@ -11,7 +11,7 @@ interface RoleGuideProps {
 export function RoleGuide({ isOpen, onClose }: RoleGuideProps) {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-9xl max-h-[90vh] overflow-y-auto overflow-x-auto w-full">
         <DialogHeader>
           <DialogTitle>Hướng dẫn đăng nhập theo vai trò</DialogTitle>
         </DialogHeader>
@@ -73,10 +73,10 @@ export function RoleGuide({ isOpen, onClose }: RoleGuideProps) {
                   </p>
                   <div className="space-y-1">
                     <p className="text-sm text-gray-700">
-                      <strong>Email:</strong> <code className="bg-gray-100 px-2 py-1 rounded">member@example.com</code>
+                      <strong>Email:</strong> <code className="bg-gray-100 px-2 py-1 rounded">user@local</code>
                     </p>
                     <p className="text-sm text-gray-700">
-                      <strong>Mật khẩu:</strong> <code className="bg-gray-100 px-2 py-1 rounded">123456</code>
+                      <strong>Mật khẩu:</strong> <code className="bg-gray-100 px-2 py-1 rounded">user</code>
                     </p>
                   </div>
                   <p className="text-xs text-gray-500 mt-2">
@@ -116,10 +116,10 @@ export function RoleGuide({ isOpen, onClose }: RoleGuideProps) {
                   </p>
                   <div className="space-y-1">
                     <p className="text-sm text-gray-700">
-                      <strong>Email:</strong> <code className="bg-gray-100 px-2 py-1 rounded">admin@example.com</code>
+                      <strong>Email:</strong> <code className="bg-gray-100 px-2 py-1 rounded">admin@local</code>
                     </p>
                     <p className="text-sm text-gray-700">
-                      <strong>Mật khẩu:</strong> <code className="bg-gray-100 px-2 py-1 rounded">123456</code>
+                      <strong>Mật khẩu:</strong> <code className="bg-gray-100 px-2 py-1 rounded">admin</code>
                     </p>
                   </div>
                   <p className="text-xs text-gray-500 mt-2">

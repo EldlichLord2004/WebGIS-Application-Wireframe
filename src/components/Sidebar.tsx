@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 import { Checkbox } from "./ui/checkbox";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend } from "recharts";
-import { TrendingUp, MessageSquare } from "lucide-react";
+import { TrendingUp, MessageSquare, Calendar, ArrowLeftRight, SplitSquareHorizontal } from "lucide-react";
 import {
   Table,
   TableBody,
@@ -45,9 +45,11 @@ const COLORS = ["#ef4444", "#f59e0b", "#10b981", "#3b82f6", "#8b5cf6"];
 interface SidebarProps {
   analysisMode: boolean;
   onToggleAnalysis: () => void;
+  selectedYear: 2015 | 2025;
+  onToggleYear: () => void;
 }
 
-export function Sidebar({ analysisMode, onToggleAnalysis }: SidebarProps) {
+export function Sidebar({ analysisMode, onToggleAnalysis, selectedYear, onToggleYear }: SidebarProps) {
   const [layers, setLayers] = useState({
     sud: true,
     giaoThong: true,
@@ -108,6 +110,44 @@ export function Sidebar({ analysisMode, onToggleAnalysis }: SidebarProps) {
               Công trình
             </label>
           </div>
+        </CardContent>
+      </Card>
+
+      {/* Map Controls */}
+      <Card className="mb-4">
+        <CardHeader>
+          <CardTitle>Điều khiển bản đồ</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          {/* Current Year Display */}
+          <div className="flex items-center justify-between">
+            <span className="text-sm text-gray-600 flex items-center gap-2">
+              <Calendar className="h-4 w-4" />
+              Năm hiện tại:
+            </span>
+            <span className="text-lg font-bold text-blue-600">{selectedYear}</span>
+          </div>
+
+          {/* Toggle Year Button */}
+          <Button
+            onClick={onToggleYear}
+            className="w-full group"
+            size="lg"
+          >
+            <ArrowLeftRight className="mr-2 h-5 w-5 group-hover:rotate-180 transition-transform duration-300" />
+            Chuyển sang {selectedYear === 2015 ? "2025" : "2015"}
+          </Button>
+
+          {/* Map Type Indicator */}
+          <div className="text-xs text-center text-gray-500">
+            {selectedYear === 2015 ? "📡 Ảnh vệ tinh" : "🗺️ Bản đồ đường phố"}
+          </div>
+
+          {/* Swipe Map Button */}
+          <Button className="w-full bg-white" variant="outline">
+            <SplitSquareHorizontal className="mr-2 h-4 w-4" />
+            Swipe Map
+          </Button>
         </CardContent>
       </Card>
 
